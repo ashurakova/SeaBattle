@@ -3,28 +3,29 @@ using SeaBattleLibrary;
 
 namespace SeaBattle
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
-        {
+        {   
             Console.Title = "Морской бой";
-            var User = new User();
-            var Bot = new Bot();
-            Boolean yes = true;
-            while (yes)
-            {
-                while (true)
+            FourDeskShip FourDeskShip = new FourDeskShip();
+            ThreeDeskShip ThreeDeskShips = new ThreeDeskShip();
+            TwoDeskShip TwoDeskShips = new TwoDeskShip();
+            OneDeskShip OneDeskShips = new OneDeskShip();
+            User user = new User();
+            Boolean GameFinished = false;
+            while (GameFinished!=true)
+            {   
+                BattleShip.Output(BattleShip.BattleField);
+                if (UserWinValidation.Win() == true)
                 {
-                    User.Output(User.BattleField);
-                    User.Strike();
-                    if (User.Win())
-                    {
-                        break;
-                    }
+                    GameFinished = true;
+                    break;
                 }
-                Console.SetCursorPosition(30, 1);
-                Console.WriteLine("Спасибо за игру!");
+                user.StepMaking();
             }
+            Console.SetCursorPosition(30, 1);
+            Console.WriteLine("Спасибо за игру!");
         }
     }
 }

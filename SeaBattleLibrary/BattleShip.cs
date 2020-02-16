@@ -2,19 +2,15 @@
 
 namespace SeaBattleLibrary
 {
-    public class Battleship
+    public class BattleShip
     {
-        public int[,] BattleField = new int[10, 10]; // Поле, которое показывается пользователю. 0 - пустая клетка, 1 - корабль, 2 - попадание по кораблю, 3 - промах
+        public static int[,] BattleField = new int[10, 10]; // Поле, которое показывается пользователю. 0 - пустая клетка, 1 - корабль, 2 - попадание по кораблю, 3 - промах
         public static int[,] BotField = new int[10, 10];//Поле, на котором размещаются корабли
         public static readonly string[] StrLetters = { "а", "б", "в", "г", "д", "е", "ж", "з", "и", "к" };
         public static readonly string[] StrNumbers = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-        public int Step = 1;
-        protected int[] Letter = new int[100];
-        protected int[] Index = new int[100];
-        public int Points = 0;
+        public static int Points = 0;
         public static int Indent = 2;
-        public int Number;
-        public void Output(int[,] Field)
+        public static void Output(int[,] Field)
         {
             if (Indent > 20)
             {
@@ -37,7 +33,7 @@ namespace SeaBattleLibrary
             }
         }
 
-        public void Part(int a)
+        public static void Part(int a)
         {
             switch (a)
             {
