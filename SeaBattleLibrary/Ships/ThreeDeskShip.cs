@@ -14,7 +14,6 @@ namespace SeaBattleLibrary
                 ShipPlacement();
             }
         }
-        
         int NumberOfShip = 0;
         ShipPlacementValidation ThreeDeskShipValidation = new ShipPlacementValidation();
        

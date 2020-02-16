@@ -13,7 +13,6 @@ namespace SeaBattleLibrary
                 ShipPlacement();
             }
         }
-
         int NumberOfShip = 0;
         public override void ShipPlacement()
         {

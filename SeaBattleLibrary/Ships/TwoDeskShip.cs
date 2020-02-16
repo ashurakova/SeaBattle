@@ -12,7 +12,6 @@ namespace SeaBattleLibrary
                 ShipPlacement();
             }
         }
-
         int NumberOfShip = 0;
         ShipPlacementValidation TwoDeskShipValidation = new ShipPlacementValidation();
 
@@ -44,7 +43,6 @@ namespace SeaBattleLibrary
                 for (int i = y; i > y + 2; i++)
                 {
                     Coordinates.Add(i);
-
                 }
                 ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x, BattleShip.BotField);
                 if (ShipCreation == true)
