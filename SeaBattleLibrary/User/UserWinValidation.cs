@@ -17,6 +17,6 @@ namespace SeaBattleLibrary
                 return true;
             }
             return false;
-        } 
+        }
     }
 }

@@ -1,41 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SeaBattleLibrary
 {
-    public class FourDeskShip:Ship
+    public class FourDeskShip : Ship
     {
-        public FourDeskShip()
+        public override void ShipPlacement(int n)
         {
-            while (NumberOfShip < 1)
+            int q = 0;
+            while (q < n)
             {
-                ShipPlacement();
-            }
-        }
-        int NumberOfShip = 0;
-        public override void ShipPlacement()
-        {
-            var random = new Random();
-            int x = random.Next(0, 9);
-            int y = random.Next(0, 9);
-            if (y > 5)
-            {
-                for (int i = y; i > y - 4; i--)
+                var random = new Random();
+                int x = random.Next(0, 9);
+                int y = random.Next(0, 9);
+                if (y > 5)
                 {
-                    BattleShip.BotField[i, x] = 1;
-                    NumberOfShip++;
+                    for (int i = y; i > y - 4; i--)
+                    {
+                        BattleShip.BotField[i, x] = 1;
+                        q++;
+                    }
+                }
+                else
+                {
+                    for (int i = y; i < y + 4; i++)
+                    {
+                        BattleShip.BotField[i, x] = 1;
+                        q++;
+                    }
                 }
             }
-            else
-            {
-                for (int i = y; i < y + 4; i++)
-                {
-                    BattleShip.BotField[i, x] = 1;
-                    NumberOfShip++;
-                }
-            }
-
         }
     }
 }

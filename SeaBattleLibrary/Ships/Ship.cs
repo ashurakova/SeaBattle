@@ -2,6 +2,6 @@
 {
     abstract public class Ship
     {
-        abstract public void ShipPlacement();
+        abstract public void ShipPlacement(int n);
     }
 }

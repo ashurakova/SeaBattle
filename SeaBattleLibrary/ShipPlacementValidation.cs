@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Collections;
+﻿using System.Collections;
 
 namespace SeaBattleLibrary
 {
     public class ShipPlacementValidation
     {
-        public bool ShipValidation(ArrayList list, int x,int [,] BotField)
+        public bool ShipValidation(ArrayList list, int x, int[,] BotField)
         {
             int counter = 0;
             foreach (int i in list)

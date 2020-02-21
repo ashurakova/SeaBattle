@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SeaBattleLibrary
 {
@@ -7,27 +8,33 @@ namespace SeaBattleLibrary
         public static int Step = 0;
         public static int[] Letter = new int[100];
         public static int[] Index = new int[100];
+        string regex = "^[а-к][1-9]$|^[а-к]10$";
         public void StepMaking()
         {
             Console.SetCursorPosition(30, BattleShip.Indent++);
             Console.WriteLine("Выстрел №: " + (Step + 1));
-            Console.SetCursorPosition(30, BattleShip.Indent++);
-            Console.Write("Ваш выстрел:");
-            string InputtedValue = Console.ReadLine();
-            bool ValidStepMade = false;
-            while (ValidStepMade==false)
+            bool ValidStepDone = false;
+            while (ValidStepDone == false)
             {
-               
-                int InputtedLetter;
-                int InputtedNumber;
-
-                bool InputValidity = UserStepValidation.StepValidation(InputtedValue, out InputtedLetter, out InputtedNumber);
-                if (InputValidity == true)
+                Console.SetCursorPosition(30, BattleShip.Indent++);
+                Console.Write("Ваш выстрел:");
+                string InputtedValue = Console.ReadLine();
+                bool InputValidity = Regex.Match(InputtedValue, regex, RegexOptions.IgnoreCase).Success;
+                if (InputValidity == false)
                 {
+                    Console.SetCursorPosition(30, BattleShip.Indent++);
+                    Console.WriteLine("Пожалуйста, введите строчную букву от а до к и цифру от 1 до 10 в формате 'a1'.");
+                    ValidStepDone = false;
+                }
+                else
+                {
+                    int ValidLetter;
+                    int ValidNumber;
+                    UserStepValidation.StepValidation(InputtedValue, out ValidLetter, out ValidNumber);
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine("HELLO");
-                    Letter[Step] = InputtedLetter;
-                    Index[Step] = InputtedNumber;
+                    Letter[Step] = ValidLetter;
+                    Index[Step] = ValidNumber;
                     string ConsoleClear = "                            ";
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine(ConsoleClear);
@@ -39,6 +46,7 @@ namespace SeaBattleLibrary
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Промах!");
                         Step++;
+                        ValidStepDone = true;
                     }
                     else if (BattleShip.BotField[Index[Step], Letter[Step]] == 1)
                     {
@@ -49,23 +57,14 @@ namespace SeaBattleLibrary
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Попадание!");
                         Step++;
+                        ValidStepDone = true;
                     }
                     else
                     {
                         Console.SetCursorPosition(30, 0);
-                        Console.Write("Нельзя стрелять в эту клетку");
-                        Console.SetCursorPosition(30, 4);
-                        Console.WriteLine();
-
+                        Console.Write("Нельзя стрелять в эту клетку.");
+                        ValidStepDone = false;
                     }
-                    ValidStepMade = true;
-                }
-                else
-                {
-                    Console.SetCursorPosition(30, BattleShip.Indent++);
-                    Console.WriteLine("Пожалуйста, введите строчную букву от а до до к и цифру от 1 до 10 в формате 'a1'.");
-                    ValidStepMade = false;
-                    break; 
                 }
             }
         }
