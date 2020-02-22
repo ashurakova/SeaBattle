@@ -17,7 +17,7 @@ namespace SeaBattleLibrary
                 ArrayList Coordinates = new ArrayList();
                 bool ShipCreation;
                 Coordinates.Add(y);
-                ShipCreation = OneDeskShipValidation.ShipValidation(Coordinates, x, BattleShip.BotField);
+                ShipCreation = OneDeskShipValidation.ShipValidation(Coordinates, x);
                 if (ShipCreation == true)
                 {
                     BattleShip.BotField[y, x] = 1;

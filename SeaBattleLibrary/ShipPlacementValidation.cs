@@ -4,12 +4,13 @@ namespace SeaBattleLibrary
 {
     public class ShipPlacementValidation
     {
-        public bool ShipValidation(ArrayList list, int x, int[,] BotField)
+        public bool ShipValidation(ArrayList list, int x)
         {
-            int counter = 0;
+            int counter=0;
+
             foreach (int i in list)
             {
-                if (BotField[i, x] == 1)
+                if (BattleShip.BotField[i, x] == 1)
                 {
                     counter++;
                 }
@@ -17,21 +18,21 @@ namespace SeaBattleLibrary
                 {
                     if (x == 0)
                     {
-                        if (BotField[i + 1, x] == 1 || BotField[i, x + 1] == 1 || BotField[i + 1, x + 1] == 1)
+                        if (BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i, x + 1] == 1 || BattleShip.BotField[i + 1, x + 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else if (x == 9)
                     {
-                        if (BotField[i + 1, x] == 1 || BotField[i, x - 1] == 1 || BotField[i + 1, x - 1] == 1)
+                        if (BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i + 1, x - 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else
                     {
-                        if (BotField[i, x - 1] == 1 || BotField[i, x + 1] == 1 || BotField[i + 1, x] == 1 || BotField[i + 1, x + 1] == 1 || BotField[i + 1, x - 1] == 1)
+                        if (BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i, x + 1] == 1 || BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i + 1, x + 1] == 1 || BattleShip.BotField[i + 1, x - 1] == 1)
                         {
                             counter++;
                         }
@@ -41,21 +42,21 @@ namespace SeaBattleLibrary
                 {
                     if (x == 0)
                     {
-                        if (BotField[i - 1, x] == 1 || BotField[i - 1, x + 1] == 1 || BotField[i, x + 1] == 1)
+                        if (BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i - 1, x + 1] == 1 || BattleShip.BotField[i, x + 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else if (x == 9)
                     {
-                        if (BotField[i - 1, x] == 1 || BotField[i, x - 1] == 1 || BotField[i - 1, x - 1] == 1)
+                        if (BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i - 1, x - 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else
                     {
-                        if (BotField[i, x - 1] == 1 || BotField[i, x + 1] == 1 || BotField[i - 1, x] == 1 || BotField[i - 1, x - 1] == 1 || BotField[i - 1, x + 1] == 1)
+                        if (BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i, x + 1] == 1 || BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i - 1, x - 1] == 1 || BattleShip.BotField[i - 1, x + 1] == 1)
                         {
                             counter++;
                         }
@@ -65,22 +66,22 @@ namespace SeaBattleLibrary
                 {
                     if (x == 0)
                     {
-                        if (BotField[i - 1, x] == 1 || BotField[i + 1, x] == 1 || BotField[i, x + 1] == 1 || BotField[i - 1, x + 1] == 1 || BotField[i + 1, x + 1] == 1)
+                        if (BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i, x + 1] == 1 || BattleShip.BotField[i - 1, x + 1] == 1 || BattleShip.BotField[i + 1, x + 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else if (x == 9)
                     {
-                        if (BotField[i, x - 1] == 1 || BotField[i - 1, x] == 1 || BotField[i + 1, x] == 1 || BotField[i - 1, x - 1] == 1 || BotField[i + 1, x - 1] == 1)
+                        if (BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i - 1, x - 1] == 1 || BattleShip.BotField[i + 1, x - 1] == 1)
                         {
                             counter++;
                         }
                     }
                     else
                     {
-                        if (BotField[i, x - 1] == 1 || BotField[i - 1, x] == 1 || BotField[i + 1, x] == 1 || BotField[i - 1, x - 1] == 1 ||
-                            BotField[i + 1, x - 1] == 1 || BotField[i, x + 1] == 1 || BotField[i + 1, x + 1] == 1 || BotField[i - 1, x + 1] == 1)
+                        if (BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i - 1, x] == 1 || BattleShip.BotField[i + 1, x] == 1 || BattleShip.BotField[i - 1, x - 1] == 1 ||
+                            BattleShip.BotField[i + 1, x - 1] == 1 || BattleShip.BotField[i, x + 1] == 1 || BattleShip.BotField[i + 1, x + 1] == 1 || BattleShip.BotField[i - 1, x + 1] == 1)
                         {
                             counter++;
                         }
@@ -88,11 +89,10 @@ namespace SeaBattleLibrary
                     }
                 }
             }
-
             if (counter == 0)
-                return true;
+            return true; 
             else
-                return false;
+            return false; 
         }
     }
 }

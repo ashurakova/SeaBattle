@@ -6,8 +6,7 @@ namespace SeaBattleLibrary
     {
         public static void StepValidation(string z, out int ValidLetter, out int ValidNumber)
         {
-            int InputtedNumber = Int32.Parse(z.Substring(1)) - 1;
-            ValidNumber = InputtedNumber;
+            ValidNumber = Int32.Parse(z.Substring(1)) - 1;
             char InputtedLetter = z[0];
             int Letter = 0;
             switch (InputtedLetter)

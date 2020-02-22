@@ -18,8 +18,8 @@ namespace SeaBattleLibrary
             {
                 Console.SetCursorPosition(30, BattleShip.Indent++);
                 Console.Write("Ваш выстрел:");
-                string InputtedValue = Console.ReadLine();
-                bool InputValidity = Regex.Match(InputtedValue, regex, RegexOptions.IgnoreCase).Success;
+                string InputtedValue = Console.ReadLine().ToLower();
+                bool InputValidity = Regex.Match(InputtedValue, regex).Success;
                 if (InputValidity == false)
                 {
                     Console.SetCursorPosition(30, BattleShip.Indent++);
@@ -32,7 +32,6 @@ namespace SeaBattleLibrary
                     int ValidNumber;
                     UserStepValidation.StepValidation(InputtedValue, out ValidLetter, out ValidNumber);
                     Console.SetCursorPosition(30, 0);
-                    Console.WriteLine("HELLO");
                     Letter[Step] = ValidLetter;
                     Index[Step] = ValidNumber;
                     string ConsoleClear = "                            ";

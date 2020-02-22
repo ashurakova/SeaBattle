@@ -22,7 +22,7 @@ namespace SeaBattleLibrary
                     {
                         Coordinates.Add(i);
                     }
-                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x, BattleShip.BotField);
+                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x);
                     if (ShipCreation == true)
                     {
                         for (int i = y; i > y - 2; i--)
@@ -34,11 +34,11 @@ namespace SeaBattleLibrary
                 }
                 else if (y <= 5)
                 {
-                    for (int i = y; i > y + 2; i++)
+                    for (int i = y; i < y + 2; i++)
                     {
                         Coordinates.Add(i);
                     }
-                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x, BattleShip.BotField);
+                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x);
                     if (ShipCreation == true)
                     {
                         for (int i = y; i < y + 2; i++)
