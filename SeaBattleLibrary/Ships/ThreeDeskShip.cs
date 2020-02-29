@@ -12,8 +12,8 @@ namespace SeaBattleLibrary
             while (q < n)
             {
                 var random = new Random();
-                int x = random.Next(0, 9);
-                int y = random.Next(0, 9);
+                int x = random.Next(0, 10);
+                int y = random.Next(0, 10);
                 ArrayList Coordinates = new ArrayList();
                 bool ShipCreation;
                 if (y > 5)
