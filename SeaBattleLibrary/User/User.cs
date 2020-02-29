@@ -34,7 +34,7 @@ namespace SeaBattleLibrary
                     Console.SetCursorPosition(30, 0);
                     Letter[Step] = ValidLetter;
                     Index[Step] = ValidNumber;
-                    string ConsoleClear = "                            ";
+                    string ConsoleClear = "                             ";
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine(ConsoleClear);
                     if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)

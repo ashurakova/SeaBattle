@@ -35,13 +35,19 @@ namespace SeaBattle
                 BattleShip.Output(BattleShip.BattleField);
                 if (UserWinValidation.Win() == true)
                 {
+                    Console.Clear();
+                    BattleShip.Output(BattleShip.BattleField);
+                    Console.SetCursorPosition(30, 0);
+                    Console.WriteLine("Вы победили!");
+                    Console.SetCursorPosition(30, 1);
+                    Console.WriteLine("Спасибо за игру!");
                     GameFinished = true;
                     break;
                 }
                 user.StepMaking();
             }
-            Console.SetCursorPosition(30, 1);
-            Console.WriteLine("Спасибо за игру!");
+            //Console.SetCursorPosition(30, 1);
+            //Console.WriteLine("Спасибо за игру!");
             Console.ReadKey();
         }
     }

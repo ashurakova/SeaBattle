@@ -8,41 +8,40 @@ namespace SeaBattleLibrary
         {
             ValidNumber = Int32.Parse(z.Substring(1)) - 1;
             char InputtedLetter = z[0];
-            int Letter = 0;
+            ValidLetter=0;
             switch (InputtedLetter)
             {
                 case 'а':
-                    Letter = 0;
+                    ValidLetter = 0;
                     break;
                 case 'б':
-                    Letter = 1;
+                    ValidLetter = 1;
                     break;
                 case 'в':
-                    Letter = 2;
+                    ValidLetter = 2;
                     break;
                 case 'г':
-                    Letter = 3;
+                    ValidLetter = 3;
                     break;
                 case 'д':
-                    Letter = 4;
+                    ValidLetter = 4;
                     break;
                 case 'е':
-                    Letter = 5;
+                    ValidLetter = 5;
                     break;
                 case 'ж':
-                    Letter = 6;
+                    ValidLetter = 6;
                     break;
                 case 'з':
-                    Letter = 7;
+                    ValidLetter = 7;
                     break;
                 case 'и':
-                    Letter = 8;
+                    ValidLetter = 8;
                     break;
                 case 'к':
-                    Letter = 9;
+                    ValidLetter = 9;
                     break;
             }
-            ValidLetter = Letter;
         }
     }
 }

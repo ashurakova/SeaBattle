@@ -12,8 +12,6 @@ namespace SeaBattleLibrary
         {
             if (BattleShip.Points == 20)
             {
-                Console.SetCursorPosition(30, 0);
-                Console.Write("Вы победили!");
                 return true;
             }
             return false;
