@@ -46,8 +46,6 @@ namespace SeaBattle
                 }
                 user.StepMaking();
             }
-            //Console.SetCursorPosition(30, 1);
-            //Console.WriteLine("Спасибо за игру!");
             Console.ReadKey();
         }
     }

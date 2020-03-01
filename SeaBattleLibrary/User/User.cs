@@ -52,6 +52,7 @@ namespace SeaBattleLibrary
                         BattleShip.BotField[Index[Step], Letter[Step]] = 2;
                         BattleShip.BattleField[Index[Step], Letter[Step]] = 2;
                         BattleShip.Output(BattleShip.BattleField);
+                        ShipKillingValidation.ShipKilling(Index[Step], Letter[Step]);
                         BattleShip.Points++;
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Попадание!");
