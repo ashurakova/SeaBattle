@@ -44,10 +44,14 @@ namespace SeaBattleLibrary
                     Console.Write('■');
                     break;
                 case 2:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write('X');
+                    Console.ResetColor();
                     break;
                 case 3:
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write('O');
+                    Console.ResetColor();
                     break;
             }
         }

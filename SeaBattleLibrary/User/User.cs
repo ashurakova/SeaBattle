@@ -37,9 +37,14 @@ namespace SeaBattleLibrary
                     string ConsoleClear = "                             ";
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine(ConsoleClear);
-                    if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)
+                    if (BattleShip.BattleField[Index[Step], Letter[Step]] == 3)
                     {
-                        BattleShip.BotField[Index[Step], Letter[Step]] = 3;
+                        Console.SetCursorPosition(30, 0);
+                        Console.Write("Нельзя стрелять в эту клетку.");
+                        ValidStepDone = false;
+                    }
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)
+                    {
                         BattleShip.BattleField[Index[Step], Letter[Step]] = 3;
                         BattleShip.Output(BattleShip.BattleField);
                         Console.SetCursorPosition(30, 0);

@@ -38,7 +38,7 @@ namespace SeaBattle
                     Console.Clear();
                     BattleShip.Output(BattleShip.BattleField);
                     Console.SetCursorPosition(30, 0);
-                    Console.WriteLine("Вы победили!");
+                    Console.WriteLine($"Вы победили, сделав {User.Step} шагов!");
                     Console.SetCursorPosition(30, 1);
                     Console.WriteLine("Спасибо за игру!");
                     GameFinished = true;
