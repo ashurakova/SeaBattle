@@ -18,8 +18,8 @@
                         }
                         else if (Letter == 9)
                         {
-                            BattleShip.BattleField[Index - 1, Letter - 1] = 3;
-                            BattleShip.BattleField[Index - 1, Letter] = 3;
+                            BattleShip.BattleField[Index + 1, Letter - 1] = 3;
+                            BattleShip.BattleField[Index + 1, Letter] = 3;
                             BattleShip.BattleField[Index, Letter - 1] = 3;
                         }
                         else
@@ -38,7 +38,7 @@
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index + cell + 1, Letter] != 1)
+                        if (BattleShip.BotField[Index + cell, Letter] != 1)
                         {
                             if (Letter == 0)
                             {
@@ -103,7 +103,7 @@
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index - cell - 1, Letter] != 1)
+                        if (BattleShip.BotField[Index - cell, Letter] != 1)
                         {
                             if (Letter == 0)
                             {
