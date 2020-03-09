@@ -43,7 +43,7 @@ namespace SeaBattleLibrary
                         Console.Write("Нельзя стрелять в эту клетку.");
                         ValidStepDone = false;
                     }
-                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Untoched)
                     {
                         BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Miss;
                         BattleShip.Output(BattleShip.BattleField);
@@ -52,9 +52,9 @@ namespace SeaBattleLibrary
                         Step++;
                         ValidStepDone = true;
                     }
-                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == 1)
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Ship)
                     {
-                        BattleShip.BotField[Index[Step], Letter[Step]] = 2;
+                        BattleShip.BotField[Index[Step], Letter[Step]] = Cells.Hit;
                         BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Hit;
                         BattleShip.Output(BattleShip.BattleField);
                         ShipKillingValidation.ShipKilling(Index[Step], Letter[Step]);

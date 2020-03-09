@@ -16,18 +16,7 @@ namespace SeaBattle
             TwoDeskShip.ShipPlacement(3);
             OneDeskShip OneDeskShip = new OneDeskShip();
             OneDeskShip.ShipPlacement(4);
-            int ShipCount = 0;
-            foreach (int element in BattleShip.BotField)
-            {
-                if (element == 1)
-                {
-                    ShipCount++;
-                }
-            }
-            if (ShipCount != 20)
-            {
-                throw new Exception();
-            }
+            ShipPlacementValidation.FullShipsPlacementValidation(BattleShip.BotField);
             User user = new User();
             Boolean GameFinished = false;
             while (GameFinished != true)
