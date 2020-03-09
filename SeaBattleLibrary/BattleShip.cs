@@ -37,18 +37,18 @@ namespace SeaBattleLibrary
         {
             switch (a)
             {
-                case 0:
+                case Cells.Untoched:
                     Console.Write('+');
                     break;
-                case 1:
+                case Cells.Ship:
                     Console.Write('■');
                     break;
-                case 2:
+                case Cells.Hit:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write('X');
                     Console.ResetColor();
                     break;
-                case 3:
+                case Cells.Miss:
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write('O');
                     Console.ResetColor();

@@ -37,7 +37,7 @@ namespace SeaBattleLibrary
                     string ConsoleClear = "                             ";
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine(ConsoleClear);
-                    if (BattleShip.BattleField[Index[Step], Letter[Step]] == 3)
+                    if (BattleShip.BattleField[Index[Step], Letter[Step]] == Cells.Miss)
                     {
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Нельзя стрелять в эту клетку.");
@@ -45,7 +45,7 @@ namespace SeaBattleLibrary
                     }
                     else if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)
                     {
-                        BattleShip.BattleField[Index[Step], Letter[Step]] = 3;
+                        BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Miss;
                         BattleShip.Output(BattleShip.BattleField);
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Промах!");
@@ -55,7 +55,7 @@ namespace SeaBattleLibrary
                     else if (BattleShip.BotField[Index[Step], Letter[Step]] == 1)
                     {
                         BattleShip.BotField[Index[Step], Letter[Step]] = 2;
-                        BattleShip.BattleField[Index[Step], Letter[Step]] = 2;
+                        BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Hit;
                         BattleShip.Output(BattleShip.BattleField);
                         ShipKillingValidation.ShipKilling(Index[Step], Letter[Step]);
                         BattleShip.Points++;
