@@ -37,21 +37,27 @@ namespace SeaBattleLibrary
                     string ConsoleClear = "                             ";
                     Console.SetCursorPosition(30, 0);
                     Console.WriteLine(ConsoleClear);
-                    if (BattleShip.BotField[Index[Step], Letter[Step]] == 0)
+                    if (BattleShip.BattleField[Index[Step], Letter[Step]] == Cells.Miss)
                     {
-                        BattleShip.BotField[Index[Step], Letter[Step]] = 3;
-                        BattleShip.BattleField[Index[Step], Letter[Step]] = 3;
+                        Console.SetCursorPosition(30, 0);
+                        Console.Write("Нельзя стрелять в эту клетку.");
+                        ValidStepDone = false;
+                    }
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Untouched)
+                    {
+                        BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Miss;
                         BattleShip.Output(BattleShip.BattleField);
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Промах!");
                         Step++;
                         ValidStepDone = true;
                     }
-                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == 1)
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Ship)
                     {
-                        BattleShip.BotField[Index[Step], Letter[Step]] = 2;
-                        BattleShip.BattleField[Index[Step], Letter[Step]] = 2;
+                        BattleShip.BotField[Index[Step], Letter[Step]] = Cells.Hit;
+                        BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Hit;
                         BattleShip.Output(BattleShip.BattleField);
+                        ShipKillingValidation.ShipKilling(Index[Step], Letter[Step]);
                         BattleShip.Points++;
                         Console.SetCursorPosition(30, 0);
                         Console.Write("Попадание!");

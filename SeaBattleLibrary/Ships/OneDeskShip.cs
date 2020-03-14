@@ -20,7 +20,7 @@ namespace SeaBattleLibrary
                 ShipCreation = OneDeskShipValidation.ShipValidation(Coordinates, x);
                 if (ShipCreation == true)
                 {
-                    BattleShip.BotField[y, x] = 1;
+                    BattleShip.BotField[y, x] = Cells.Ship;
                     q++;
                 }
             }
