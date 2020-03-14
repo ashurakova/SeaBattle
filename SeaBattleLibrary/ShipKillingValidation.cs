@@ -6,9 +6,9 @@
         {
             if (Index == 0)
             {
-                if (BattleShip.BotField[Index + 1, Letter] != 1)
+                if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == 0)
+                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {
@@ -33,14 +33,14 @@
                             BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index + 1, Letter] == 2)
+                    else if (BattleShip.BotField[Index + 1, Letter] == Cells.Hit)
                     {
                         int cell = 1;
-                        while (BattleShip.BotField[Index + cell, Letter] == 2)
+                        while (BattleShip.BotField[Index + cell, Letter] == Cells.Hit)
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index + cell, Letter] != 1)
+                        if (BattleShip.BotField[Index + cell, Letter] != Cells.Ship)
                         {
                             if (Letter == 0)
                             {
@@ -73,9 +73,9 @@
             }
             else if (Index == 9)
             {
-                if (BattleShip.BotField[Index - 1, Letter] != 1)
+                if (BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index - 1, Letter] == 0)
+                    if (BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {
@@ -98,14 +98,14 @@
                             BattleShip.BattleField[Index - 1, Letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index - 1, Letter] == 2)
+                    else if (BattleShip.BotField[Index - 1, Letter] == Cells.Hit)
                     {
                         int cell = 1;
-                        while (BattleShip.BotField[Index - cell, Letter] == 2)
+                        while (BattleShip.BotField[Index - cell, Letter] == Cells.Hit)
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index - cell, Letter] != 1)
+                        if (BattleShip.BotField[Index - cell, Letter] != Cells.Ship)
                         {
                             if (Letter == 0)
                             {
@@ -138,9 +138,9 @@
             }
             else
             {
-                if (BattleShip.BotField[Index + 1, Letter] != 1 & BattleShip.BotField[Index - 1, Letter] != 1)
+                if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship & BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == 0 & BattleShip.BotField[Index - 1, Letter] == 0)
+                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched & BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {
@@ -170,29 +170,29 @@
                             BattleShip.BattleField[Index + 1, Letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index - 1, Letter] == 2 || BattleShip.BotField[Index + 1, Letter] == 2)
+                    else if (BattleShip.BotField[Index - 1, Letter] == Cells.Hit || BattleShip.BotField[Index + 1, Letter] == Cells.Hit)
                     {
                         int CellUp = 1;
                         int CellDown = 1;
-                        while (Index + CellUp <= 9 && BattleShip.BotField[Index + CellUp, Letter] == 2)
+                        while (Index + CellUp <= 9 && BattleShip.BotField[Index + CellUp, Letter] == Cells.Hit)
                         {
                             CellUp++;
                         }
-                        while (Index - CellDown >= 0 && BattleShip.BotField[Index - CellDown, Letter] == 2)
+                        while (Index - CellDown >= 0 && BattleShip.BotField[Index - CellDown, Letter] == Cells.Hit)
                         {
                             CellDown++;
                         }
                         bool ShipDead = true;
                         if (Index + CellUp <= 9)
                         {
-                            if (BattleShip.BotField[Index + CellUp, Letter] == 1)
+                            if (BattleShip.BotField[Index + CellUp, Letter] == Cells.Ship)
                             {
                                 ShipDead = false;
                             }
                         }
                         if (Index - CellDown >= 0)
                         {
-                            if (BattleShip.BotField[Index - CellDown, Letter] == 1)
+                            if (BattleShip.BotField[Index - CellDown, Letter] == Cells.Ship)
                             {
                                 ShipDead = false;
                             }

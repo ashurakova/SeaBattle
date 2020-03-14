@@ -27,7 +27,7 @@ namespace SeaBattleLibrary
                     {
                         for (int i = y; i > y - 2; i--)
                         {
-                            BattleShip.BotField[i, x] = 1;
+                            BattleShip.BotField[i, x] = Cells.Ship;
                         }
                         q++;
                     }
@@ -43,7 +43,7 @@ namespace SeaBattleLibrary
                     {
                         for (int i = y; i < y + 2; i++)
                         {
-                            BattleShip.BotField[i, x] = 1;
+                            BattleShip.BotField[i, x] = Cells.Ship;
                         }
                         q++;
                     }
