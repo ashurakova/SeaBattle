@@ -8,7 +8,7 @@
             {
                 if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untoched)
+                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {
@@ -75,7 +75,7 @@
             {
                 if (BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index - 1, Letter] == Cells.Untoched)
+                    if (BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {
@@ -140,7 +140,7 @@
             {
                 if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship & BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untoched & BattleShip.BotField[Index - 1, Letter] == Cells.Untoched)
+                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched & BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
                     {
                         if (Letter == 0)
                         {

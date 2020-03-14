@@ -43,7 +43,7 @@ namespace SeaBattleLibrary
                         Console.Write("Нельзя стрелять в эту клетку.");
                         ValidStepDone = false;
                     }
-                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Untoched)
+                    else if (BattleShip.BotField[Index[Step], Letter[Step]] == Cells.Untouched)
                     {
                         BattleShip.BattleField[Index[Step], Letter[Step]] = Cells.Miss;
                         BattleShip.Output(BattleShip.BattleField);

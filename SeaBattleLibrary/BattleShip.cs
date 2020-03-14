@@ -37,7 +37,7 @@ namespace SeaBattleLibrary
         {
             switch (a)
             {
-                case Cells.Untoched:
+                case Cells.Untouched:
                     Console.Write('+');
                     break;
                 case Cells.Ship:

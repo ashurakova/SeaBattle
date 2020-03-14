@@ -33,7 +33,7 @@ namespace SeaBattleLibrary
                     }
                     else
                     {
-                        if (BattleShip.BotField[i, x - 1] == 1 || BattleShip.BotField[i, x + 1] == Cells.Ship || BattleShip.BotField[i + 1, x] == Cells.Ship || BattleShip.BotField[i + 1, x + 1] == Cells.Ship || BattleShip.BotField[i + 1, x - 1] == Cells.Ship)
+                        if (BattleShip.BotField[i, x - 1] == Cells.Ship || BattleShip.BotField[i, x + 1] == Cells.Ship || BattleShip.BotField[i + 1, x] == Cells.Ship || BattleShip.BotField[i + 1, x + 1] == Cells.Ship || BattleShip.BotField[i + 1, x - 1] == Cells.Ship)
                         {
                             counter++;
                         }
