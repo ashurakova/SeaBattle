@@ -101,7 +101,7 @@ namespace SeaBattleLibrary
             int ShipCount = 0;
             foreach (int element in BattleShip.BotField)
             {
-                if (element == 1)
+                if (element == Cells.Ship)
                 {
                     ShipCount++;
                 }
