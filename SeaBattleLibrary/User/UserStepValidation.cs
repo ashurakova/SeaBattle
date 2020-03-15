@@ -4,10 +4,10 @@ namespace SeaBattleLibrary
 {
     public class UserStepValidation
     {
-        public static void StepValidation(string z, out int ValidLetter, out int ValidNumber)
+        public static void StepValidation(string InputtedValue, out int ValidLetter, out int ValidNumber)
         {
-            ValidNumber = Int32.Parse(z.Substring(1)) - 1;
-            char InputtedLetter = z[0];
+            ValidNumber = Int32.Parse(InputtedValue.Substring(1)) - 1;
+            char InputtedLetter = InputtedValue[0];
             ValidLetter=0;
             switch (InputtedLetter)
             {
