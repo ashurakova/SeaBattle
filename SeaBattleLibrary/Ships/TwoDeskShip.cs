@@ -6,30 +6,28 @@ namespace SeaBattleLibrary
     public class TwoDeskShip : Ship
     {
         ShipPlacementValidation TwoDeskShipValidation = new ShipPlacementValidation();
-        public override void ShipPlacement(int n)
+        public override void ShipPlacement(int ShipsToPlace)
         {
-            int q = 0;
-            while (q < n)
+            int PlacedShips = 0;
+            while (PlacedShips < ShipsToPlace)
             {
                 var random = new Random();
                 int x = random.Next(0, 10);
                 int y = random.Next(0, 10);
                 ArrayList Coordinates = new ArrayList();
-                bool ShipCreation;
                 if (y > 5)
                 {
                     for (int i = y; i > y - 2; i--)
                     {
                         Coordinates.Add(i);
                     }
-                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x);
-                    if (ShipCreation == true)
+                    if (TwoDeskShipValidation.ShipValidation(Coordinates, x))
                     {
                         for (int i = y; i > y - 2; i--)
                         {
                             BattleShip.BotField[i, x] = Cells.Ship;
                         }
-                        q++;
+                        PlacedShips++;
                     }
                 }
                 else if (y <= 5)
@@ -38,14 +36,13 @@ namespace SeaBattleLibrary
                     {
                         Coordinates.Add(i);
                     }
-                    ShipCreation = TwoDeskShipValidation.ShipValidation(Coordinates, x);
-                    if (ShipCreation == true)
+                    if (TwoDeskShipValidation.ShipValidation(Coordinates, x))
                     {
                         for (int i = y; i < y + 2; i++)
                         {
                             BattleShip.BotField[i, x] = Cells.Ship;
                         }
-                        q++;
+                        PlacedShips++;
                     }
                 }
             }

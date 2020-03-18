@@ -14,13 +14,12 @@ namespace SeaBattleLibrary
             Console.SetCursorPosition(30, BattleShip.Indent++);
             Console.WriteLine("Выстрел №: " + (Step + 1));
             bool ValidStepDone = false;
-            while (ValidStepDone == false)
+            while (!ValidStepDone)
             {
                 Console.SetCursorPosition(30, BattleShip.Indent++);
                 Console.Write("Ваш выстрел:");
                 string InputtedValue = Console.ReadLine().ToLower();
-                bool InputValidity = Regex.Match(InputtedValue, regex).Success;
-                if (InputValidity == false)
+                if (!Regex.Match(InputtedValue, regex).Success)
                 {
                     Console.SetCursorPosition(30, BattleShip.Indent++);
                     Console.WriteLine("Пожалуйста, введите строчную букву от а до к и цифру от 1 до 10 в формате 'a1'.");

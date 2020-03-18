@@ -18,11 +18,11 @@ namespace SeaBattle
             OneDeskShip.ShipPlacement(4);
             ShipPlacementValidation.FullShipsPlacementValidation(BattleShip.BotField);
             User user = new User();
-            Boolean GameFinished = false;
-            while (GameFinished != true)
+            Boolean IsGameFinished = false;
+            while (!IsGameFinished)
             {
                 BattleShip.Output(BattleShip.BattleField);
-                if (UserWinValidation.Win() == true)
+                if (UserWinValidation.Win())
                 {
                     Console.Clear();
                     BattleShip.Output(BattleShip.BattleField);
@@ -30,7 +30,7 @@ namespace SeaBattle
                     Console.WriteLine($"Вы победили, сделав {User.Step} шагов!");
                     Console.SetCursorPosition(30, 1);
                     Console.WriteLine("Спасибо за игру!");
-                    GameFinished = true;
+                    IsGameFinished = true;
                     break;
                 }
                 user.StepMaking();

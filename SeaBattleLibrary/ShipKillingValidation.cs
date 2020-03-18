@@ -197,7 +197,7 @@
                                 ShipDead = false;
                             }
                         }
-                        if (ShipDead == true)
+                        if (ShipDead)
                         {
                             if (Index + CellUp <= 9)
                             {
