@@ -18,7 +18,7 @@ namespace SeaBattle
             OneDeskShip.ShipPlacement(4);
             ShipPlacementValidation.FullShipsPlacementValidation(BattleShip.BotField);
             User user = new User();
-            Boolean IsGameFinished = false;
+            bool IsGameFinished = false;
             while (!IsGameFinished)
             {
                 BattleShip.Output(BattleShip.BattleField);
