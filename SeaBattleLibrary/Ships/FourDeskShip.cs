@@ -4,10 +4,10 @@ namespace SeaBattleLibrary
 {
     public class FourDeskShip : Ship
     {
-        public override void ShipPlacement(int ShipsToPlace)
+        public override void ShipPlacement(int shipsToPlace)
         {
             int PlacedShips = 0;
-            while (PlacedShips < ShipsToPlace)
+            while (PlacedShips < shipsToPlace)
             {
                 var random = new Random();
                 int x = random.Next(0, 10);

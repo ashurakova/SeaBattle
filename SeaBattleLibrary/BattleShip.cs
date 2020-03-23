@@ -10,7 +10,7 @@ namespace SeaBattleLibrary
         public static readonly string[] StrNumbers = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
         public static int Points = 0;
         public static int Indent = 2;
-        public static void Output(int[,] Field)
+        public static void Output(int[,] field)
         {
             if (Indent > 20)
             {
@@ -28,7 +28,7 @@ namespace SeaBattleLibrary
                 for (int j = 0; j < 10; j++)
                 {
                     Console.SetCursorPosition(2 * j + 3, i + 1);
-                    Part(Field[i, j]);
+                    Part(field[i, j]);
                 }
             }
         }
