@@ -6,8 +6,6 @@ namespace SeaBattleLibrary
 {
     public class UserWinValidation
     {
-        public static char LetterInput { get; private set; }
-
         public static bool Win()
         {
             if (BattleShip.Points == 20)

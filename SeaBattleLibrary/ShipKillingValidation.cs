@@ -2,134 +2,134 @@
 {
     public class ShipKillingValidation
     {
-        public static void ShipKilling(int Index, int Letter)
+        public static void ShipKilling(int index, int letter)
         {
-            if (Index == 0)
+            if (index == 0)
             {
-                if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship)
+                if (BattleShip.BotField[index + 1, letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched)
+                    if (BattleShip.BotField[index + 1, letter] == Cells.Untouched)
                     {
-                        if (Letter == 0)
+                        if (letter == 0)
                         {
-                            BattleShip.BattleField[Index + 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
                         }
-                        else if (Letter == 9)
+                        else if (letter == 9)
                         {
 
-                            BattleShip.BattleField[Index + 1, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter - 1] = Cells.Miss;
 
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
                         }
                         else
                         {
-                            BattleShip.BattleField[Index + 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index + 1, Letter] == Cells.Hit)
+                    else if (BattleShip.BotField[index + 1, letter] == Cells.Hit)
                     {
                         int cell = 1;
-                        while (BattleShip.BotField[Index + cell, Letter] == Cells.Hit)
+                        while (BattleShip.BotField[index + cell, letter] == Cells.Hit)
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index + cell, Letter] != Cells.Ship)
+                        if (BattleShip.BotField[index + cell, letter] != Cells.Ship)
                         {
-                            if (Letter == 0)
+                            if (letter == 0)
                             {
-                                BattleShip.BattleField[Index + cell, Letter] = Cells.Miss;
-                                for (; cell >= Index; cell--)
+                                BattleShip.BattleField[index + cell, letter] = Cells.Miss;
+                                for (; cell >= index; cell--)
                                 {
-                                    BattleShip.BattleField[Index + cell, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + cell, letter + 1] = Cells.Miss;
                                 }
                             }
-                            else if (Letter == 9)
+                            else if (letter == 9)
                             {
-                                BattleShip.BattleField[Index + cell, Letter] = Cells.Miss;
-                                for (; cell >= Index; cell--)
+                                BattleShip.BattleField[index + cell, letter] = Cells.Miss;
+                                for (; cell >= index; cell--)
                                 {
-                                    BattleShip.BattleField[Index + cell, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + cell, letter - 1] = Cells.Miss;
                                 }
                             }
                             else
                             {
-                                BattleShip.BattleField[Index + cell, Letter] = Cells.Miss;
-                                for (; cell >= Index; cell--)
+                                BattleShip.BattleField[index + cell, letter] = Cells.Miss;
+                                for (; cell >= index; cell--)
                                 {
-                                    BattleShip.BattleField[Index + cell, Letter - 1] = Cells.Miss;
-                                    BattleShip.BattleField[Index + cell, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + cell, letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + cell, letter + 1] = Cells.Miss;
                                 }
                             }
                         }
                     }
                 }
             }
-            else if (Index == 9)
+            else if (index == 9)
             {
-                if (BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
+                if (BattleShip.BotField[index - 1, letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
+                    if (BattleShip.BotField[index - 1, letter] == Cells.Untouched)
                     {
-                        if (Letter == 0)
+                        if (letter == 0)
                         {
-                            BattleShip.BattleField[Index - 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
                         }
-                        else if (Letter == 9)
+                        else if (letter == 9)
                         {
-                            BattleShip.BattleField[Index - 1, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
                         }
                         else
                         {
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index - 1, Letter] == Cells.Hit)
+                    else if (BattleShip.BotField[index - 1, letter] == Cells.Hit)
                     {
                         int cell = 1;
-                        while (BattleShip.BotField[Index - cell, Letter] == Cells.Hit)
+                        while (BattleShip.BotField[index - cell, letter] == Cells.Hit)
                         {
                             cell++;
                         }
-                        if (BattleShip.BotField[Index - cell, Letter] != Cells.Ship)
+                        if (BattleShip.BotField[index - cell, letter] != Cells.Ship)
                         {
-                            if (Letter == 0)
+                            if (letter == 0)
                             {
-                                BattleShip.BattleField[Index - cell, Letter] = Cells.Miss;
+                                BattleShip.BattleField[index - cell, letter] = Cells.Miss;
                                 for (; cell >= 0; cell--)
                                 {
-                                    BattleShip.BattleField[Index - cell, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - cell, letter + 1] = Cells.Miss;
                                 }
                             }
-                            else if (Letter == 9)
+                            else if (letter == 9)
                             {
-                                BattleShip.BattleField[Index - cell, Letter] = Cells.Miss;
+                                BattleShip.BattleField[index - cell, letter] = Cells.Miss;
                                 for (; cell >= 0; cell--)
                                 {
-                                    BattleShip.BattleField[Index - cell, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - cell, letter - 1] = Cells.Miss;
                                 }
                             }
                             else
                             {
-                                BattleShip.BattleField[Index - cell, Letter] = Cells.Miss;
+                                BattleShip.BattleField[index - cell, letter] = Cells.Miss;
                                 for (; cell >= 0; cell--)
                                 {
-                                    BattleShip.BattleField[Index - cell, Letter - 1] = Cells.Miss;
-                                    BattleShip.BattleField[Index - cell, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - cell, letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - cell, letter + 1] = Cells.Miss;
                                 }
                             }
                         }
@@ -138,111 +138,111 @@
             }
             else
             {
-                if (BattleShip.BotField[Index + 1, Letter] != Cells.Ship & BattleShip.BotField[Index - 1, Letter] != Cells.Ship)
+                if (BattleShip.BotField[index + 1, letter] != Cells.Ship & BattleShip.BotField[index - 1, letter] != Cells.Ship)
                 {
-                    if (BattleShip.BotField[Index + 1, Letter] == Cells.Untouched & BattleShip.BotField[Index - 1, Letter] == Cells.Untouched)
+                    if (BattleShip.BotField[index + 1, letter] == Cells.Untouched & BattleShip.BotField[index - 1, letter] == Cells.Untouched)
                     {
-                        if (Letter == 0)
+                        if (letter == 0)
                         {
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter + 1] = Cells.Miss;
                         }
-                        else if (Letter == 9)
+                        else if (letter == 9)
                         {
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter - 1] = Cells.Miss;
                         }
                         else
                         {
-                            BattleShip.BattleField[Index - 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter - 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index - 1, Letter + 1] = Cells.Miss;
-                            BattleShip.BattleField[Index + 1, Letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter] = Cells.Miss;
+                            BattleShip.BattleField[index, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter - 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index - 1, letter + 1] = Cells.Miss;
+                            BattleShip.BattleField[index + 1, letter - 1] = Cells.Miss;
                         }
                     }
-                    else if (BattleShip.BotField[Index - 1, Letter] == Cells.Hit || BattleShip.BotField[Index + 1, Letter] == Cells.Hit)
+                    else if (BattleShip.BotField[index - 1, letter] == Cells.Hit || BattleShip.BotField[index + 1, letter] == Cells.Hit)
                     {
                         int CellUp = 1;
                         int CellDown = 1;
-                        while (Index + CellUp <= 9 && BattleShip.BotField[Index + CellUp, Letter] == Cells.Hit)
+                        while (index + CellUp <= 9 && BattleShip.BotField[index + CellUp, letter] == Cells.Hit)
                         {
                             CellUp++;
                         }
-                        while (Index - CellDown >= 0 && BattleShip.BotField[Index - CellDown, Letter] == Cells.Hit)
+                        while (index - CellDown >= 0 && BattleShip.BotField[index - CellDown, letter] == Cells.Hit)
                         {
                             CellDown++;
                         }
                         bool ShipDead = true;
-                        if (Index + CellUp <= 9)
+                        if (index + CellUp <= 9)
                         {
-                            if (BattleShip.BotField[Index + CellUp, Letter] == Cells.Ship)
+                            if (BattleShip.BotField[index + CellUp, letter] == Cells.Ship)
                             {
                                 ShipDead = false;
                             }
                         }
-                        if (Index - CellDown >= 0)
+                        if (index - CellDown >= 0)
                         {
-                            if (BattleShip.BotField[Index - CellDown, Letter] == Cells.Ship)
+                            if (BattleShip.BotField[index - CellDown, letter] == Cells.Ship)
                             {
                                 ShipDead = false;
                             }
                         }
-                        if (ShipDead == true)
+                        if (ShipDead)
                         {
-                            if (Index + CellUp <= 9)
+                            if (index + CellUp <= 9)
                             {
-                                BattleShip.BattleField[Index + CellUp, Letter] = Cells.Miss;
+                                BattleShip.BattleField[index + CellUp, letter] = Cells.Miss;
                             }
-                            if (Index - CellDown >= 0)
+                            if (index - CellDown >= 0)
                             {
-                                BattleShip.BattleField[Index - CellDown, Letter] = Cells.Miss;
+                                BattleShip.BattleField[index - CellDown, letter] = Cells.Miss;
                             }
-                            if (Letter - 1 >= 0)
+                            if (letter - 1 >= 0)
                             {
                                 for (int i = CellUp - 1; i >= 0; i--)
                                 {
-                                    BattleShip.BattleField[Index + i, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + i, letter - 1] = Cells.Miss;
                                 }
                                 for (int i = CellDown - 1; i >= 0; i--)
                                 {
-                                    BattleShip.BattleField[Index - i, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - i, letter - 1] = Cells.Miss;
                                 }
-                                if (Index + CellUp <= 9)
+                                if (index + CellUp <= 9)
                                 {
-                                    BattleShip.BattleField[Index + CellUp, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + CellUp, letter - 1] = Cells.Miss;
                                 }
-                                if (Index - CellDown >= 0)
+                                if (index - CellDown >= 0)
                                 {
-                                    BattleShip.BattleField[Index - CellDown, Letter - 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - CellDown, letter - 1] = Cells.Miss;
                                 }
                             }
-                            if (Letter + 1 <= 9)
+                            if (letter + 1 <= 9)
                             {
                                 for (int i = CellUp - 1; i >= 0; i--)
                                 {
-                                    BattleShip.BattleField[Index + i, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + i, letter + 1] = Cells.Miss;
                                 }
                                 for (int i = CellDown - 1; i >= 0; i--)
                                 {
-                                    BattleShip.BattleField[Index - i, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - i, letter + 1] = Cells.Miss;
                                 }
-                                if (Index + CellUp <= 9)
+                                if (index + CellUp <= 9)
                                 {
-                                    BattleShip.BattleField[Index + CellUp, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index + CellUp, letter + 1] = Cells.Miss;
                                 }
-                                if (Index - CellDown >= 0)
+                                if (index - CellDown >= 0)
                                 {
-                                    BattleShip.BattleField[Index - CellDown, Letter + 1] = Cells.Miss;
+                                    BattleShip.BattleField[index - CellDown, letter + 1] = Cells.Miss;
                                 }
                             }
                         }

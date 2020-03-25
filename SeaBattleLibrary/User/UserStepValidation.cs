@@ -4,42 +4,42 @@ namespace SeaBattleLibrary
 {
     public class UserStepValidation
     {
-        public static void StepValidation(string z, out int ValidLetter, out int ValidNumber)
+        public static void StepValidation(string inputtedValue, out int validLetter, out int validNumber)
         {
-            ValidNumber = Int32.Parse(z.Substring(1)) - 1;
-            char InputtedLetter = z[0];
-            ValidLetter=0;
+            validNumber = Int32.Parse(inputtedValue.Substring(1)) - 1;
+            char InputtedLetter = inputtedValue[0];
+            validLetter=0;
             switch (InputtedLetter)
             {
                 case 'а':
-                    ValidLetter = 0;
+                    validLetter = 0;
                     break;
                 case 'б':
-                    ValidLetter = 1;
+                    validLetter = 1;
                     break;
                 case 'в':
-                    ValidLetter = 2;
+                    validLetter = 2;
                     break;
                 case 'г':
-                    ValidLetter = 3;
+                    validLetter = 3;
                     break;
                 case 'д':
-                    ValidLetter = 4;
+                    validLetter = 4;
                     break;
                 case 'е':
-                    ValidLetter = 5;
+                    validLetter = 5;
                     break;
                 case 'ж':
-                    ValidLetter = 6;
+                    validLetter = 6;
                     break;
                 case 'з':
-                    ValidLetter = 7;
+                    validLetter = 7;
                     break;
                 case 'и':
-                    ValidLetter = 8;
+                    validLetter = 8;
                     break;
                 case 'к':
-                    ValidLetter = 9;
+                    validLetter = 9;
                     break;
             }
         }

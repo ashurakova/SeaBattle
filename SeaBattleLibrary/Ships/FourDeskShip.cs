@@ -4,10 +4,10 @@ namespace SeaBattleLibrary
 {
     public class FourDeskShip : Ship
     {
-        public override void ShipPlacement(int n)
+        public override void ShipPlacement(int shipsToPlace)
         {
-            int q = 0;
-            while (q < n)
+            int PlacedShips = 0;
+            while (PlacedShips < shipsToPlace)
             {
                 var random = new Random();
                 int x = random.Next(0, 10);
@@ -17,7 +17,7 @@ namespace SeaBattleLibrary
                     for (int i = y; i > y - 4; i--)
                     {
                         BattleShip.BotField[i, x] = Cells.Ship;
-                        q++;
+                        PlacedShips++;
                     }
                 }
                 else
@@ -25,7 +25,7 @@ namespace SeaBattleLibrary
                     for (int i = y; i < y + 4; i++)
                     {
                         BattleShip.BotField[i, x] = Cells.Ship;
-                        q++;
+                        PlacedShips++;
                     }
                 }
             }
